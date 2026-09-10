@@ -1,0 +1,44 @@
+{
+  "protocolName": "My Protocol — LP Positions",
+  "rpc": "https://mainnet.infura.io/v3/YOUR_KEY_HERE",
+  "wallets": [
+    {
+      "address": "0xYOUR_LP_WALLET_ADDRESS",
+      "label": "LP Wallet"
+    }
+  ],
+  "tokens": [
+    {
+      "address": "native",
+      "symbol": "ETH",
+      "coingeckoId": "ethereum",
+      "decimals": 18
+    }
+  ],
+  "lpPositions": [
+    {
+      "protocol": "uniswap-v2",
+      "poolAddress": "0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc",
+      "walletAddress": "0xYOUR_LP_WALLET_ADDRESS",
+      "label": "USDC/ETH Uniswap v2",
+      "token0": {
+        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+        "symbol": "USDC",
+        "coingeckoId": "usd-coin",
+        "decimals": 6
+      },
+      "token1": {
+        "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "symbol": "WETH",
+        "coingeckoId": "ethereum",
+        "decimals": 18
+      }
+    }
+  ],
+  "var": {
+    "confidenceLevels": [0.95, 0.99],
+    "lookbackDays": 90,
+    "horizons": [1, 7]
+  },
+  "outputDir": "./reports"
+}

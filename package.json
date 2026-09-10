@@ -1,0 +1,32 @@
+{
+  "name": "@deepguard/var-calculator",
+  "version": "1.0.0",
+  "description": "Value at Risk calculator for on-chain treasury and LP positions",
+  "main": "dist/index.js",
+  "bin": {
+    "var-calc": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "clean": "rm -rf dist"
+  },
+  "keywords": ["web3", "defi", "risk", "var", "treasury", "analytics"],
+  "author": "Deep Guard <getaudited@deepguard.xyz>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "ethers": "^6.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
