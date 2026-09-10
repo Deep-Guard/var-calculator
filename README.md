@@ -151,7 +151,7 @@ The CoinGecko free tier allows approximately 10–30 calls per minute. The tool 
 This tool gives a directional picture of your portfolio risk. For a full protocol risk assessment covering economic security, liquidation mechanics, and governance attack surfaces, reach out to Deep Guard.
 
 **Email:** getaudited@deepguard.xyz
-**Telegram:** @KingFavourCreates
+**Telegram:** [Message us](https://t.me/KingFavourCreates)
 **Website:** https://deepguard.xyz
 
 ## Support Open-Source Work
