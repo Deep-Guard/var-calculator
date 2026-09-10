@@ -14,7 +14,7 @@ function buildHeaders(): Record<string, string> {
 }
 
 /** Pause execution for ms milliseconds — used to respect CoinGecko rate limits */
-function sleep(ms: number): Promise<void> {
+function wait(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
@@ -46,7 +46,7 @@ export async function fetchHistoricalPrices(
   } catch (error: unknown) {
     if (axios.isAxiosError(error) && error.response?.status === 429) {
       console.warn(`  Rate limited by CoinGecko. Waiting 60s before retrying ${symbol}...`);
-      await sleep(60_000);
+      await wait(60_000);
       return fetchHistoricalPrices(coingeckoId, symbol, days);
     }
     throw new Error(
@@ -86,13 +86,13 @@ export async function fetchCurrentPrices(
 }
 
 /**
- * Fetch historical prices for multiple coins, with a delay between requests
+ * Fetch historical prices for multiple coins, with a wait between requests
  * to stay within CoinGecko's free-tier rate limit (10–30 calls/min).
  */
 export async function fetchAllHistoricalPrices(
   coins: { coingeckoId: string; symbol: string }[],
   days: number,
-  delayMs = 2_000
+  waitMs = 2_000
 ): Promise<Map<string, PriceHistory>> {
   const results = new Map<string, PriceHistory>();
 
@@ -103,7 +103,7 @@ export async function fetchAllHistoricalPrices(
     process.stdout.write(` ${history.prices.length} days\n`);
 
     if (coins.indexOf(coin) < coins.length - 1) {
-      await sleep(delayMs);
+      await wait(waitMs);
     }
   }
 
